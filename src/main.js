@@ -13,3 +13,6 @@ let borderPadding = borderUISize / 3;
 
 // reserve keyboard variables
 let keyF, keyR, keyLEFT, keyRIGHT;
+
+// for second player
+let keyL, keyL2, keyR2;
