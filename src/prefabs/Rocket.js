@@ -1,29 +1,22 @@
 // Rocket prefab
 class Rocket extends Phaser.GameObjects.Sprite {
-    constructor(scene, x, y, texture, frame) {
+    constructor(scene, x, y, texture, frame, keyLt, keyRt) {
         super(scene, x, y, texture, frame);
 
         scene.add.existing(this);   // add to existing, displayList, updateList
         this.isFiring = false;      // track rocket's firing status
-        this.isFiring2 = false;     // track rocket's firing status for player 2
         this.moveSpeed = 2;         // pixels per frame
-        this.sfxRocket = scene.sound.add('sfx_rocket')  // add rocket sfx
+        this.sfxRocket = scene.sound.add('sfx_rocket');  // add rocket sfx
+        this.keyLft = keyLt;
+        this.keyRft = keyRt;
     }
 
     update() {
         // left/right movement
         if(!this.isFiring) {
-            if(keyLEFT.isDown && this.x >= borderUISize + this.width) {
+            if(keyLft.isDown && this.x >= borderUISize + this.width) {
                 this.x -= this.moveSpeed;
-            } else if (keyRIGHT.isDown && this.x <= game.config.width - borderUISize - this.width) {
-                this.x += this.moveSpeed;
-            }
-        }
-        // left/right movement p2
-        if(!this.isFiring2) {
-            if(keyL2.isDown && this.x >= borderUISize + this.width) {
-                this.x -= this.moveSpeed;
-            } else if (keyR2.isDown && this.x <= game.config.width - borderUISize - this.width) {
+            } else if (keyRft.isDown && this.x <= game.config.width - borderUISize - this.width) {
                 this.x += this.moveSpeed;
             }
         }
