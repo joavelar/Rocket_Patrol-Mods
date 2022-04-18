@@ -39,6 +39,10 @@ class Play extends Phaser.Scene {
         keyR = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.R);
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
+        //for player2
+        keyL2 = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.J);
+        keyR2 = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.L);
+        keyP = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.P);
 
         // animation config
         this.anims.create({
@@ -91,6 +95,7 @@ class Play extends Phaser.Scene {
 
         if(!this.gameOver) {
             this.p1Rocket.update();             // update p1
+            this.p2Rocket.update();             // update p2
              this.ship01.update();               // update spaceship (x3)
             this.ship02.update();
             this.ship03.update();
