@@ -38,6 +38,8 @@ my game.
 * Allow the player to control the Rocket after it's fired (5)
 - I allowed the player to control the rocket after the rocket
 is fired, however the player controls it at a reduced speed.
+
+Total: 100
 */ 
 let config = {
     type: Phaser.CANVAS,
