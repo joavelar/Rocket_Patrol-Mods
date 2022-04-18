@@ -40,8 +40,8 @@ class Play extends Phaser.Scene {
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
         //for player2
-        keyL2 = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.J);
-        keyR2 = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.L);
+        keyL2 = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
+        keyR2 = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
         keyP = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.P);
 
         // animation config
@@ -112,6 +112,19 @@ class Play extends Phaser.Scene {
         }
         if (this.checkCollision(this.p1Rocket, this.ship01)) {
             this.p1Rocket.reset();
+            this.shipExplode(this.ship01);
+        }
+        //p2 check collisions
+        if(this.checkCollision(this.p2Rocket, this.ship03)) {
+            this.p2Rocket.reset();
+            this.shipExplode(this.ship03);
+        }
+        if (this.checkCollision(this.p2Rocket, this.ship02)) {
+            this.p2Rocket.reset();
+            this.shipExplode(this.ship02);
+        }
+        if (this.checkCollision(this.p2Rocket, this.ship01)) {
+            this.p2Rocket.reset();
             this.shipExplode(this.ship01);
         }
     }
