@@ -81,7 +81,6 @@ class Play extends Phaser.Scene {
 
         // GAME OVER flag
         this.gameOver = false;
-
         // 60-second play clock
         scoreConfig.fixedWidth = 0;
         this.clock = this.time.delayedCall(game.settings.gameTimer, () => {
@@ -89,9 +88,13 @@ class Play extends Phaser.Scene {
             this.add.text(game.config.width/2, game.config.height/2 + 64, 'Press (R) to Restart or ← to Menu', scoreConfig).setOrigin(0.5);
             this.gameOver = true;
         }, null, this);
+        //trying to add time left
+        this.timeLeft = this.add.text(borderUISize + borderPadding*35, borderUISize + borderPadding*2, this.clock.getRemainingSeconds().toFixed(0), scoreConfig);
     }
 
     update() {
+        //time
+        this.timeLeft.text = this.clock.getRemainingSeconds().toFixed(0); // to show time, help from william morales
         // check key input for restart / menu
         if(this.gameOver && Phaser.Input.Keyboard.JustDown(keyR)) {
             this.scene.restart();
