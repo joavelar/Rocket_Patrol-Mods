@@ -28,7 +28,7 @@ class Menu extends Phaser.Scene {
         // show menu text
         menuConfig.backgroundColor = '#0000b3';
         menuConfig.color = '#00FF00'
-        this.add.text(game.config.width/2, game.config.height/2 - borderUISize - borderPadding, 'Rocket Patrol', menuConfig).setOrigin(0.5);
+        this.add.text(game.config.width/2, game.config.height/2 - borderUISize - borderPadding, 'Rocket Patrol Mods', menuConfig).setOrigin(0.5);
         menuConfig.backgroundColor = '#b30000';
         menuConfig.color = '#FFFFFF'
         this.add.text(game.config.width/2, game.config.height/2, 'Use ←→ arrows to move & (F) to fire', menuConfig).setOrigin(0.5);
